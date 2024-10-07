@@ -1524,11 +1524,7 @@ namespace UnityGameFramework.Editor.ResourceTools
                     return BuildTarget.StandaloneWindows64;
 
                 case Platform.MacOS:
-#if UNITY_2017_3_OR_NEWER
-                    return BuildTarget.StandaloneOSX;
-#else
-                    return BuildTarget.StandaloneOSXUniversal;
-#endif
+return BuildTarget.StandaloneOSX;
                 case Platform.Linux:
                     return BuildTarget.StandaloneLinux64;
 
