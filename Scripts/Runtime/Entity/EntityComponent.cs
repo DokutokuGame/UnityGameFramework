@@ -514,7 +514,18 @@ namespace UnityGameFramework.Runtime
         /// <param name="entity">实体。</param>
         public void HideEntity(Entity entity)
         {
-            m_EntityManager.HideEntity(entity);
+            if(!entity.isActiveAndEnabled)
+                return;
+            
+            try
+            {
+                m_EntityManager.HideEntity(entity);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         /// <summary>
